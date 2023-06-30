@@ -1,7 +1,7 @@
 import { Kanji } from "../interfaces.js";
 import api from "./api.js";
 import { Telegraf } from "telegraf";
-import { bold, code, fmt } from "telegraf/format";
+import { bold, code, fmt, join } from "telegraf/format";
 import env from "./env.js";
 
 class Telegram {
@@ -20,13 +20,16 @@ class Telegram {
     const onReadingText = this.getReadingText(kanji.onReading);
     const kunReadingText = this.getReadingText(kanji.kunReading);
 
-    return fmt`
-      ${bold("Kanji:")} ${code(kanji.char)}\n\n${bold("Meaning:")} ${code(
-      kanji.meaning
-    )}\n${bold("Level:")} ${code(kanji.level)}\n${bold("On:")} ${code(
-      onReadingText
-    )}\n${bold("Kun:")} ${code(kunReadingText)}
-    `;
+    return join(
+      [
+        fmt`${bold("Kanji:")} ${code(kanji.char)}\n`,
+        fmt`${bold("Meaning:")} ${code(kanji.meaning)}`,
+        fmt`${bold("Level:")} ${code(kanji.level)}`,
+        fmt`${bold("On:")} ${code(onReadingText)}`,
+        fmt`${bold("Kun:")} ${code(kunReadingText)}`,
+      ],
+      "\n"
+    );
   }
 
   getReadingText(xReading: string) {
