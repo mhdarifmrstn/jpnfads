@@ -21,7 +21,7 @@ class Telegram {
     const kunReadingText = this.getReadingText(kanji.kunReading);
 
     return fmt`
-      ${bold("Kanji:")} ${code(kanji.char)}\n${bold("Meaning:")} ${code(
+      ${bold("Kanji:")} ${code(kanji.char)}\n\n${bold("Meaning:")} ${code(
       kanji.meaning
     )}\n${bold("Level:")} ${code(kanji.level)}\n${bold("On:")} ${code(
       onReadingText
