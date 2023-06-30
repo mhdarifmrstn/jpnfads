@@ -17,6 +17,7 @@
   },
   "dependencies": {
     "dotenv": "^16.3.1",
+    "telegraf": "^4.12.2",
     "wanakana": "^5.1.0"
   }
 }

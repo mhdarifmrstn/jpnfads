@@ -1,6 +1,7 @@
 import wanakana from "wanakana";
 import kanji from "../assets/kanji.json" assert { type: "json" };
 import getRandom from "../extra/getRandom.js";
+import { Kanji } from "../interfaces.js";
 
 class Api {
   kanji: typeof kanji;
@@ -11,7 +12,7 @@ class Api {
     this.toRomaji = wanakana.toRomaji;
   }
 
-  async getRandomKanji() {
+  async getRandomKanji(): Promise<Kanji> {
     return getRandom(this.kanji);
   }
 }
