@@ -1,0 +1,22 @@
+{
+  "name": "jpnfads",
+  "version": "1.0.0",
+  "main": "dist/index.js",
+  "license": "MIT",
+  "type": "module",
+  "scripts": {
+    "dev": "node --loader ts-node/esm ./src/main.ts",
+    "start": "node ./dist/main.js",
+    "build": "tsc"
+  },
+  "devDependencies": {
+    "@types/node": "^20.3.2",
+    "@types/wanakana": "^4.0.3",
+    "ts-node": "^10.9.1",
+    "typescript": "^5.1.6"
+  },
+  "dependencies": {
+    "dotenv": "^16.3.1",
+    "wanakana": "^5.1.0"
+  }
+}
