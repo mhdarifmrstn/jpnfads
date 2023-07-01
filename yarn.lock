@@ -201,6 +201,11 @@ ts-node@^10.9.1:
     v8-compile-cache-lib "^3.0.1"
     yn "3.1.1"
 
+twitter-api-v2@^1.15.0:
+  version "1.15.0"
+  resolved "https://registry.yarnpkg.com/twitter-api-v2/-/twitter-api-v2-1.15.0.tgz#ab8ff0f50158ac8d7897777b70ec39087d950f40"
+  integrity sha512-Cqg3pIGhSwPyFBndpBrucdeNXecNFnYcXy3ixQ4brJHd/3k1CAtBVcX0e3s6jRYl/QIx5BmyGXS/SHEGtYZ3gw==
+
 typegram@^4.3.0:
   version "4.3.0"
   resolved "https://registry.yarnpkg.com/typegram/-/typegram-4.3.0.tgz#690ec1287f771608070e149c92de4fca42e54db0"
