@@ -1,8 +1,8 @@
 import { Kanji } from "../interfaces.js";
-import api from "./api.js";
 import { Telegraf } from "telegraf";
 import { bold, code, fmt, join } from "telegraf/format";
 import env from "./env.js";
+import getReadingText from "../extra/getReadingText.js";
 
 class Telegram {
   app: Telegraf;
@@ -17,8 +17,8 @@ class Telegram {
   }
 
   generatePostText(kanji: Kanji) {
-    const onReadingText = this.getReadingText(kanji.onReading);
-    const kunReadingText = this.getReadingText(kanji.kunReading);
+    const onReadingText = getReadingText(kanji.onReading);
+    const kunReadingText = getReadingText(kanji.kunReading);
 
     return join(
       [
@@ -30,10 +30,6 @@ class Telegram {
       ],
       "\n"
     );
-  }
-
-  getReadingText(xReading: string) {
-    return xReading ? `${xReading} (${api.toRomaji(xReading)})` : "-";
   }
 }
 const telegram = new Telegram();
