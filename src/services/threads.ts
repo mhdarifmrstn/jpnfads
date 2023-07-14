@@ -14,20 +14,8 @@ class Threads {
   }
 
   async sendPost(kanji: Kanji) {
-    const postText = this.generatePostText(kanji);
+    const postText = api.generatePostText(kanji);
     return this.app.publish(postText);
-  }
-
-  generatePostText(kanji: Kanji) {
-    const kana = kanji.kana;
-    const romaji = api.toRomaji(kana);
-
-    return (
-      `Kanji: ${kanji.kanji}\n\n` +
-      `Kana: ${kana} - ${romaji}\n` +
-      `Meaning: ${kanji.meaning}\n` +
-      `Level: n${kanji.level}`
-    );
   }
 }
 const threads = new Threads();
