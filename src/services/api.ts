@@ -18,7 +18,7 @@ class Api {
 
     return (
       `Kanji: ${kanji.kanji}\n\n` +
-      `Kana: ${kana} (${romaji})\n` +
+      `Kana: ${kana} - ${romaji}\n` +
       `Meaning: ${kanji.meaning}\n` +
       `Level: n${kanji.level}`
     );
