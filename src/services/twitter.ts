@@ -1,7 +1,7 @@
 import { TwitterApi } from "twitter-api-v2";
 import { Kanji } from "../interfaces.js";
 import env from "./env.js";
-import getReadingText from "../extra/getReadingText.js";
+import api from "./api.js";
 
 class Twitter {
   app: TwitterApi;
@@ -21,15 +21,14 @@ class Twitter {
   }
 
   generatePostText(kanji: Kanji) {
-    const onReadingText = getReadingText(kanji.onReading);
-    const kunReadingText = getReadingText(kanji.kunReading);
+    const kana = kanji.kana;
+    const romaji = api.toRomaji(kana);
 
     return (
-      `Kanji: ${kanji.char}\n\n` +
+      `Kanji: ${kanji.kanji}\n\n` +
+      `Kana: ${kana} - ${romaji}\n` +
       `Meaning: ${kanji.meaning}\n` +
-      `Level: ${kanji.level}\n` +
-      `On: ${onReadingText}\n` +
-      `Kun: ${kunReadingText}`
+      `Level: n${kanji.level}`
     );
   }
 }

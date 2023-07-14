@@ -1,15 +1,16 @@
-export interface KanjiCompound {
+export interface Kanji {
   kanji: string;
+  meaning: string;
+  level: number;
   kana: string;
-  translation: string;
-  type: string;
+  onYomi: string;
+  kunYomi: string;
+  examples: KanjiExample[];
 }
 
-export interface Kanji {
-  char: string;
-  compound?: KanjiCompound | KanjiCompound[];
-  onReading: string;
-  kunReading: string;
+export interface KanjiExample {
+  kanji: string;
   meaning: string;
-  level: string;
+  kana: string;
+  level: number;
 }

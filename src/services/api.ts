@@ -1,19 +1,14 @@
 import wanakana from "wanakana";
-import kanji from "../assets/kanji.json" assert { type: "json" };
+import kanji from "../assets/n5.json" assert { type: "json" };
 import getRandom from "../extra/getRandom.js";
-import { Kanji } from "../interfaces.js";
 
 class Api {
-  kanji: typeof kanji;
-  toRomaji: typeof wanakana.toRomaji;
-
-  constructor() {
-    this.kanji = kanji;
-    this.toRomaji = wanakana.toRomaji;
+  async getRandomKanji() {
+    return getRandom(kanji);
   }
 
-  async getRandomKanji(): Promise<Kanji> {
-    return getRandom(this.kanji);
+  toRomaji(kana: string) {
+    return wanakana.toRomaji(kana).replace(/\./g, "-");
   }
 }
 const api = new Api();
