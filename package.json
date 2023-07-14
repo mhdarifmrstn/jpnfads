@@ -18,6 +18,7 @@
   "dependencies": {
     "dotenv": "^16.3.1",
     "telegraf": "^4.12.2",
+    "threads-api": "^1.4.1",
     "twitter-api-v2": "^1.15.0",
     "wanakana": "^5.1.0"
   }
