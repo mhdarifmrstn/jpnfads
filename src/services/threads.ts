@@ -8,8 +8,8 @@ class Threads {
 
   constructor() {
     this.app = new threadsApi.ThreadsAPI({
-      username: env.threadsUsername,
-      password: env.threadsPassword,
+      token: env.threadsToken,
+      userID: env.threadsUserId,
     });
   }
 
