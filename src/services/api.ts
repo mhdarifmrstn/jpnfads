@@ -13,12 +13,12 @@ class Api {
   }
 
   generatePostText(kanji: Kanji) {
-    const kana = kanji.kana;
+    const kana = kanji.kana.replace(/\(|\)/g, "");
     const romaji = api.toRomaji(kana);
 
     return (
       `Kanji: ${kanji.kanji}\n\n` +
-      `Kana: ${kana} - ${romaji}\n` +
+      `Kana: ${kana} (${romaji})\n` +
       `Meaning: ${kanji.meaning}\n` +
       `Level: n${kanji.level}`
     );
