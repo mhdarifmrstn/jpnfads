@@ -1,11 +1,29 @@
 import wanakana from "wanakana";
-import kanji from "../assets/n5.json" assert { type: "json" };
-import getRandom from "../extra/getRandom.js";
+import mongoose from "mongoose";
 import { Kanji } from "../interfaces.js";
+import env from "./env.js";
+
+const kanjiExampleSchema = new mongoose.Schema({
+  kanji: { type: String, required: true },
+  meaning: { type: String, required: true },
+  kana: { type: String, required: true },
+  level: { type: Number, required: true },
+});
+const kanjiSchema = new mongoose.Schema({
+  kanji: { type: String, required: true },
+  meaning: { type: String, required: true },
+  level: { type: Number, required: true },
+  kana: { type: String, required: true },
+  onYomi: { type: String, required: true },
+  kunYomi: { type: String, required: true },
+  examples: { type: [kanjiExampleSchema], required: true },
+});
+const KanjiModel = mongoose.model("Kanji", kanjiSchema, "kanji");
 
 class Api {
   async getRandomKanji() {
-    return getRandom(kanji);
+    await mongoose.connect(env.mongodbUri);
+    return (await KanjiModel.aggregate<Kanji>([{ $sample: { size: 1 } }]))[0];
   }
 
   toRomaji(kana: string) {

@@ -8,6 +8,7 @@ const twitterAccessToken = required("TWITTER_ACCESS_TOKEN");
 const twitterAccessSecret = required("TWITTER_ACCESS_TOKEN_SECRET");
 const threadsToken = required("THREADS_TOKEN");
 const threadsUserId = required("THREADS_USER_ID");
+const mongodbUri = required("MONGODB_URI");
 
 export default {
   token,
@@ -18,4 +19,5 @@ export default {
   twitterAccessSecret,
   threadsToken,
   threadsUserId,
+  mongodbUri,
 };

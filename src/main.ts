@@ -9,5 +9,7 @@ async function main() {
   await telegram.sendPost(kanji);
   await threads.sendPost(kanji);
   await twitter.sendPost(kanji);
+
+  process.exit();
 }
 main();
