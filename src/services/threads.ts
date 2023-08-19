@@ -1,9 +1,9 @@
 import threadsApi from "threads-api";
 import env from "./env.js";
-import { Kanji } from "../interfaces.js";
+import { Kanji, Platform } from "../interfaces.js";
 import api from "./api.js";
 
-class Threads {
+class Threads implements Platform {
   app: threadsApi.ThreadsAPI;
 
   constructor() {

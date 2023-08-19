@@ -1,9 +1,9 @@
-import { Kanji } from "../interfaces.js";
+import { Kanji, Platform } from "../interfaces.js";
 import { Telegraf } from "telegraf";
 import env from "./env.js";
 import api from "./api.js";
 
-class Telegram {
+class Telegram implements Platform {
   app: Telegraf;
 
   constructor() {

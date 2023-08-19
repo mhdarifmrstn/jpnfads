@@ -1,9 +1,9 @@
 import { TwitterApi } from "twitter-api-v2";
-import { Kanji } from "../interfaces.js";
+import { Kanji, Platform } from "../interfaces.js";
 import env from "./env.js";
 import api from "./api.js";
 
-class Twitter {
+class Twitter implements Platform {
   app: TwitterApi;
 
   constructor() {

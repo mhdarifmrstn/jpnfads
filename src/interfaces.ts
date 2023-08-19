@@ -14,3 +14,7 @@ export interface KanjiExample {
   kana: string;
   level: number;
 }
+
+export interface Platform {
+  sendPost(kanji: Kanji): Promise<unknown>;
+}
