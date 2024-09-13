@@ -22,7 +22,7 @@ const KanjiModel = mongoose.model("Kanji", kanjiSchema, "kanji");
 
 class Api {
   async getRandomKanji() {
-    await mongoose.connect(env.mongodbUri);
+    await mongoose.connect(env.MONGODB_URI);
     return (await KanjiModel.aggregate<Kanji>([{ $sample: { size: 1 } }]))[0];
   }
 

@@ -8,10 +8,10 @@ class Twitter implements Platform {
 
   constructor() {
     this.app = new TwitterApi({
-      appKey: env.twitterAppKey,
-      appSecret: env.twitterAppSecret,
-      accessToken: env.twitterAccessToken,
-      accessSecret: env.twitterAccessSecret,
+      appKey: env.TWITTER_API_KEY,
+      appSecret: env.TWITTER_API_KEY_SECRET,
+      accessToken: env.TWITTER_ACCESS_TOKEN,
+      accessSecret: env.TWITTER_ACCESS_TOKEN_SECRET,
     });
   }
 

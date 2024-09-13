@@ -8,8 +8,8 @@ class Threads implements Platform {
 
   constructor() {
     this.app = new threadsApi.ThreadsAPI({
-      token: env.threadsToken,
-      userID: env.threadsUserId,
+      token: env.THREADS_TOKEN,
+      userID: env.THREADS_USER_ID,
     });
   }
 
