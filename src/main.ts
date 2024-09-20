@@ -1,12 +1,13 @@
 import { Platform } from "./interfaces.js";
 import api from "./services/api.js";
+import mastodon from "./services/mastodon.js";
 import telegram from "./services/telegram.js";
 import threads from "./services/threads.js";
 import twitter from "./services/twitter.js";
 
 async function main() {
   const kanji = await api.getRandomKanji();
-  const platforms: Platform[] = [telegram, threads, twitter];
+  const platforms: Platform[] = [telegram, threads, twitter, mastodon];
 
   for (const platform of platforms) {
     const platformName = platform.constructor.name;

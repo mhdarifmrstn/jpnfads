@@ -11,5 +11,7 @@ const env = cleanEnv(process.env, {
   THREADS_TOKEN: str(),
   THREADS_USER_ID: str(),
   MONGODB_URI: str(),
+  MASTODON_URL: str(),
+  MASTODON_TOKEN: str(),
 });
 export default env;
